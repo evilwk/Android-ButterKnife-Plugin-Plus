@@ -3,7 +3,6 @@ package com.avast.android.butterknifezelezny;
 import com.avast.android.butterknifezelezny.common.Utils;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,11 +18,13 @@ public class Settings implements Configurable {
     public static final String PREFIX = "butterknifezelezny_prefix";
     public static final String VIEWHOLDER_CLASS_NAME = "butterknifezelezny_viewholder_class_name";
     public static final String INIT_BUTTERKNIFE = "true";
+    public static final String IN_LIBRARY = "false";
 
     private JPanel mPanel;
     private JTextField mHolderName;
     private JTextField mPrefix;
     private JComboBox mComboBox;
+    private JComboBox mInLibraryComboBox;
 
     @Nls
     @Override
@@ -50,10 +51,11 @@ public class Settings implements Configurable {
     }
 
     @Override
-    public void apply() throws ConfigurationException {
+    public void apply() {
         PropertiesComponent.getInstance().setValue(PREFIX, mPrefix.getText());
         PropertiesComponent.getInstance().setValue(VIEWHOLDER_CLASS_NAME, mHolderName.getText());
         PropertiesComponent.getInstance().setValue(INIT_BUTTERKNIFE, mComboBox.getSelectedItem().toString());
+        PropertiesComponent.getInstance().setValue(IN_LIBRARY, mInLibraryComboBox.getSelectedItem().toString());
     }
 
     @Override
@@ -65,7 +67,6 @@ public class Settings implements Configurable {
         } else {
             mComboBox.setSelectedIndex(1);
         }
-
     }
 
     @Override

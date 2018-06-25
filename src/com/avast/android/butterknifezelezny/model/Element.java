@@ -48,14 +48,18 @@ public class Element {
      *
      * @return
      */
-    public String getFullID() {
+    public String getFullID(boolean inLibrary) {
         StringBuilder fullID = new StringBuilder();
         String rPrefix;
 
         if (isAndroidNS) {
             rPrefix = "android.R.id.";
         } else {
-            rPrefix = "R.id.";
+            if (inLibrary) {
+                rPrefix = "R2.id.";
+            } else {
+                rPrefix = "R.id.";
+            }
         }
 
         fullID.append(rPrefix);

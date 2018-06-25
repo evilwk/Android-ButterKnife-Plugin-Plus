@@ -8,5 +8,9 @@ import java.util.ArrayList;
 
 public interface IConfirmListener {
 
-    public void onConfirm(Project project, Editor editor, ArrayList<Element> elements, String fieldNamePrefix, boolean createHolder,boolean initButterKnife);
+    void onConfirm(Project project, Editor editor, ArrayList<Element> elements,
+                   String fieldNamePrefix,
+                   boolean createHolder,
+                   boolean initButterKnife,
+                   boolean inLibrary);
 }

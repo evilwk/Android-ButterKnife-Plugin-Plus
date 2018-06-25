@@ -26,8 +26,14 @@ public class InjectWriter extends WriteCommandAction.Simple {
     protected String mFieldNamePrefix;
     protected boolean mCreateHolder;
     protected boolean mInitButterKnife;
+    protected boolean mInLibrary;
 
-    public InjectWriter(PsiFile file, PsiClass clazz, String command, ArrayList<Element> elements, String layoutFileName, String fieldNamePrefix, boolean createHolder, boolean initButterKnife) {
+    public InjectWriter(PsiFile file, PsiClass clazz, String command, ArrayList<Element> elements,
+                        String layoutFileName,
+                        String fieldNamePrefix,
+                        boolean createHolder,
+                        boolean initButterKnife,
+                        boolean inLibrary) {
         super(clazz.getProject(), command);
 
         mFile = file;
@@ -39,10 +45,11 @@ public class InjectWriter extends WriteCommandAction.Simple {
         mFieldNamePrefix = fieldNamePrefix;
         mCreateHolder = createHolder;
         mInitButterKnife = initButterKnife;
+        mInLibrary = inLibrary;
     }
 
     @Override
-    public void run() throws Throwable {
+    public void run() {
         final IButterKnife butterKnife = ButterKnifeFactory.findButterKnifeForPsiElement(mProject, mFile);
         if (butterKnife == null) {
             return; // Butterknife library is not available for project
@@ -74,7 +81,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
             method.append("@butterknife.OnClick(");
             for (Element element : mElements) {
                 if (element.isClick) {
-                    method.append(element.getFullID() + ")");
+                    method.append(element.getFullID(mInLibrary)).append(")");
                 }
             }
             method.append("public void onClick() {}");
@@ -85,16 +92,16 @@ public class InjectWriter extends WriteCommandAction.Simple {
                 if (element.isClick) {
                     currentCount++;
                     if (currentCount == Utils.getClickCount(mElements)) {
-                        method.append(element.getFullID() + "})");
+                        method.append(element.getFullID(mInLibrary)).append("})");
                     } else {
-                        method.append(element.getFullID() + ",");
+                        method.append(element.getFullID(mInLibrary)).append(",");
                     }
                 }
             }
             method.append("public void onClick(android.view.View view) {switch (view.getId()){");
             for (Element element : mElements) {
                 if (element.isClick) {
-                    method.append("case " + element.getFullID() + ": break;");
+                    method.append("case ").append(element.getFullID(false)).append(": break;");
                 }
             }
             method.append("}}");
@@ -129,7 +136,11 @@ public class InjectWriter extends WriteCommandAction.Simple {
             if (element.isAndroidNS) {
                 rPrefix = "android.R.id.";
             } else {
-                rPrefix = "R.id.";
+                if (mInLibrary) {
+                    rPrefix = "R2.id.";
+                } else {
+                    rPrefix = "R.id.";
+                }
             }
 
             StringBuilder injection = new StringBuilder();
@@ -139,14 +150,7 @@ public class InjectWriter extends WriteCommandAction.Simple {
             injection.append(rPrefix);
             injection.append(element.id);
             injection.append(") ");
-            if (element.nameFull != null && element.nameFull.length() > 0) { // custom package+class
-                injection.append(element.nameFull);
-            } else if (Definitions.paths.containsKey(element.name)) { // listed class
-                injection.append(Definitions.paths.get(element.name));
-            } else { // android.widget
-                injection.append("android.widget.");
-                injection.append(element.name);
-            }
+            elementName(element, injection);
             injection.append(" ");
             injection.append(element.fieldName);
             injection.append(";");
@@ -155,20 +159,18 @@ public class InjectWriter extends WriteCommandAction.Simple {
         }
 
         mClass.add(viewHolder);
-
-        // add view holder's comment
-        StringBuilder comment = new StringBuilder();
-        comment.append("/**\n");
-        comment.append(" * This class contains all butterknife-injected Views & Layouts from layout file '");
-        comment.append(mLayoutFileName);
-        comment.append("'\n");
-        comment.append("* for easy to all layout elements.\n");
-        comment.append(" *\n");
-        comment.append(" * @author\tButterKnifeZelezny, plugin for Android Studio by Avast Developers (http://github.com/avast)\n");
-        comment.append("*/");
-
-//        mClass.addBefore(mFactory.createCommentFromText(comment.toString(), mClass), mClass.findInnerClassByName(Utils.getViewHolderClassName(), true));
         mClass.addBefore(mFactory.createKeyword("static", mClass), mClass.findInnerClassByName(Utils.getViewHolderClassName(), true));
+    }
+
+    private void elementName(Element element, StringBuilder injection) {
+        if (element.nameFull != null && element.nameFull.length() > 0) { // custom package+class
+            injection.append(element.nameFull);
+        } else if (Definitions.paths.containsKey(element.name)) { // listed class
+            injection.append(Definitions.paths.get(element.name));
+        } else { // android.widget
+            injection.append("android.widget.");
+            injection.append(element.name);
+        }
     }
 
     /**
@@ -185,16 +187,9 @@ public class InjectWriter extends WriteCommandAction.Simple {
             injection.append('@');
             injection.append(butterKnife.getFieldAnnotationCanonicalName());
             injection.append('(');
-            injection.append(element.getFullID());
+            injection.append(element.getFullID(mInLibrary));
             injection.append(") ");
-            if (element.nameFull != null && element.nameFull.length() > 0) { // custom package+class
-                injection.append(element.nameFull);
-            } else if (Definitions.paths.containsKey(element.name)) { // listed class
-                injection.append(Definitions.paths.get(element.name));
-            } else { // android.widget
-                injection.append("android.widget.");
-                injection.append(element.name);
-            }
+            elementName(element, injection);
             injection.append(" ");
             injection.append(element.fieldName);
             injection.append(";");
@@ -254,18 +249,19 @@ public class InjectWriter extends WriteCommandAction.Simple {
         } else {
             PsiMethod onCreate = mClass.findMethodsByName("onCreate", false)[0];
             if (!containsButterKnifeInjectLine(onCreate, butterKnife.getSimpleBindStatement())) {
-                for (PsiStatement statement : onCreate.getBody().getStatements()) {
-                    // Search for setContentView()
-                    if (statement.getFirstChild() instanceof PsiMethodCallExpression) {
-                        PsiReferenceExpression methodExpression
-                                = ((PsiMethodCallExpression) statement.getFirstChild())
-                                .getMethodExpression();
-                        // Insert ButterKnife.inject()/ButterKnife.bind() after setContentView()
-                        if (methodExpression.getText().equals("setContentView")) {
-                            onCreate.getBody().addAfter(mFactory.createStatementFromText(
-                                    butterKnife.getCanonicalBindStatement() + "(this);", mClass), statement);
-                            break;
-                        }
+                return;
+            }
+            for (PsiStatement statement : onCreate.getBody().getStatements()) {
+                // Search for setContentView()
+                if (statement.getFirstChild() instanceof PsiMethodCallExpression) {
+                    PsiReferenceExpression methodExpression
+                            = ((PsiMethodCallExpression) statement.getFirstChild())
+                            .getMethodExpression();
+                    // Insert ButterKnife.inject()/ButterKnife.bind() after setContentView()
+                    if (methodExpression.getText().equals("setContentView")) {
+                        onCreate.getBody().addAfter(mFactory.createStatementFromText(
+                                butterKnife.getCanonicalBindStatement() + "(this);", mClass), statement);
+                        break;
                     }
                 }
             }
@@ -283,12 +279,9 @@ public class InjectWriter extends WriteCommandAction.Simple {
             method.append("@Override public View onCreateView(android.view.LayoutInflater inflater, android.view.ViewGroup container, android.os.Bundle savedInstanceState) {\n");
             method.append("\t// TODO: inflate a fragment view\n");
             method.append("android.view.View rootView = super.onCreateView(inflater, container, savedInstanceState);\n");
-            if (butterKnife.isUsingUnbinder()) {
-                // generate new unbinder
+            unbinderName = generateUnbind(butterKnife, method);
+            if (unbinderName != null) {
                 generateUnbinder = true;
-                unbinderName = getNameForUnbinder(butterKnife);
-                method.append(unbinderName);
-                method.append(" = ");
             }
             method.append(butterKnife.getCanonicalBindStatement());
             method.append("(this, rootView);\n");
@@ -307,12 +300,9 @@ public class InjectWriter extends WriteCommandAction.Simple {
                         if (returnValue.contains("R.layout")) {
                             onCreateView.getBody().addBefore(mFactory.createStatementFromText("android.view.View view = " + returnValue + ";", mClass), statement);
                             StringBuilder bindText = new StringBuilder();
-                            if (butterKnife.isUsingUnbinder()) {
-                                // generate new unbinder
+                            unbinderName = generateUnbind(butterKnife, bindText);
+                            if (unbinderName != null) {
                                 generateUnbinder = true;
-                                unbinderName = getNameForUnbinder(butterKnife);
-                                bindText.append(unbinderName);
-                                bindText.append(" = ");
                             }
                             bindText.append(butterKnife.getCanonicalBindStatement());
                             bindText.append("(this, view);");
@@ -322,12 +312,9 @@ public class InjectWriter extends WriteCommandAction.Simple {
                         } else {
                             // Insert ButterKnife.inject()/ButterKnife.bind() before returning a view for a fragment
                             StringBuilder bindText = new StringBuilder();
-                            if (butterKnife.isUsingUnbinder()) {
-                                // generate new unbinder
+                            unbinderName = generateUnbind(butterKnife, bindText);
+                            if (unbinderName != null) {
                                 generateUnbinder = true;
-                                unbinderName = getNameForUnbinder(butterKnife);
-                                bindText.append(unbinderName);
-                                bindText.append(" = ");
                             }
                             bindText.append(butterKnife.getCanonicalBindStatement());
                             bindText.append("(this, ");
@@ -369,6 +356,16 @@ public class InjectWriter extends WriteCommandAction.Simple {
             String unbinderFieldText = butterKnife.getUnbinderClassCanonicalName() + " " + unbinderName + ";";
             mClass.add(mFactory.createFieldFromText(unbinderFieldText, mClass));
         }
+    }
+
+    private String generateUnbind(IButterKnife butterKnife, StringBuilder builder) {
+        if (butterKnife.isUsingUnbinder()) {
+            String unbinderName = getNameForUnbinder(butterKnife);
+            builder.append(unbinderName);
+            builder.append(" = ");
+            return unbinderName;
+        }
+        return null;
     }
 
     private static StringBuilder generateUnbindStatement(@NotNull IButterKnife butterKnife, String unbinderName,

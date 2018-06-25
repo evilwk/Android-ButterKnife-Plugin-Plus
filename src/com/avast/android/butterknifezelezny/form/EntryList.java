@@ -21,21 +21,31 @@ public class EntryList extends JPanel {
 
     protected Project mProject;
     protected Editor mEditor;
+
     protected ArrayList<Element> mElements = new ArrayList<Element>();
     protected ArrayList<String> mGeneratedIDs = new ArrayList<String>();
     protected ArrayList<Entry> mEntries = new ArrayList<Entry>();
-    protected boolean mCreateHolder = false;
-    protected boolean mInitButterKnife = false;
+
     protected String mPrefix = null;
     protected IConfirmListener mConfirmListener;
     protected ICancelListener mCancelListener;
     protected JCheckBox mPrefixCheck;
     protected JTextField mPrefixValue;
     protected JLabel mPrefixLabel;
+
     protected JCheckBox mHolderCheck;
-    protected JCheckBox mInitButterKnifeCheck;
     protected JLabel mHolderLabel;
+    protected boolean mCreateHolder = false;
+
+    protected boolean mInitButterKnife = false;
+    protected JCheckBox mInitButterKnifeCheck;
     protected JLabel mButterKnifeLabel;
+
+    protected boolean mInLibrary = false;
+    protected JCheckBox mInLibraryCheck;
+    protected JLabel mInLibraryLabel;
+
+
     protected JButton mConfirm;
     protected JButton mCancel;
     protected EntryHeader mEntryHeader;
@@ -72,7 +82,8 @@ public class EntryList extends JPanel {
         mConfirmListener = confirmListener;
         mCancelListener = cancelListener;
 
-        mInitButterKnife= Utils.isInitButterKnifeDefault();
+        mInitButterKnife = Utils.isInitButterKnifeDefault();
+        mInLibrary = Utils.isInLibraryDefault();
         if (elements != null) {
             mElements.addAll(elements);
         }
@@ -149,6 +160,7 @@ public class EntryList extends JPanel {
 		add(prefixPanel, BorderLayout.PAGE_END);
 		*/
 
+        // holder
         mHolderCheck = new JCheckBox();
         mHolderCheck.setPreferredSize(new Dimension(32, 26));
         mHolderCheck.setSelected(mCreateHolder);
@@ -156,15 +168,6 @@ public class EntryList extends JPanel {
 
         mHolderLabel = new JLabel();
         mHolderLabel.setText("Create ViewHolder");
-
-        mInitButterKnifeCheck = new JBCheckBox();
-        mInitButterKnifeCheck.setPreferredSize(new Dimension(32, 26));
-        mInitButterKnifeCheck.setSelected(mInitButterKnife);
-        mInitButterKnifeCheck.addChangeListener(new CheckButterKnifeListener());
-
-        mButterKnifeLabel = new JLabel();
-        mButterKnifeLabel.setText("Init ButterKnife at current class");
-
 
         JPanel holderPanel = new JPanel();
         holderPanel.setLayout(new BoxLayout(holderPanel, BoxLayout.LINE_AXIS));
@@ -174,6 +177,15 @@ public class EntryList extends JPanel {
         holderPanel.add(Box.createHorizontalGlue());
         add(holderPanel, BorderLayout.PAGE_END);
 
+        // init
+        mInitButterKnifeCheck = new JBCheckBox();
+        mInitButterKnifeCheck.setPreferredSize(new Dimension(32, 26));
+        mInitButterKnifeCheck.setSelected(mInitButterKnife);
+        mInitButterKnifeCheck.addChangeListener(new CheckButterKnifeListener());
+
+        mButterKnifeLabel = new JLabel();
+        mButterKnifeLabel.setText("Init ButterKnife at current class");
+
         JPanel butterKnifePanel = new JPanel();
         butterKnifePanel.setLayout(new BoxLayout(butterKnifePanel, BoxLayout.LINE_AXIS));
         butterKnifePanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
@@ -182,6 +194,24 @@ public class EntryList extends JPanel {
         butterKnifePanel.add(Box.createHorizontalGlue());
         add(butterKnifePanel, BorderLayout.PAGE_END);
 
+        // library
+        mInLibraryCheck = new JBCheckBox();
+        mInLibraryCheck.setPreferredSize(new Dimension(32, 26));
+        mInLibraryCheck.setSelected(mInLibrary);
+        mInLibraryCheck.addChangeListener(new CheckInLibraryListener());
+
+        mInLibraryLabel = new JLabel();
+        mInLibraryLabel.setText("ButterKnife in Library");
+
+        JPanel inLibraryPanel = new JPanel();
+        inLibraryPanel.setLayout(new BoxLayout(inLibraryPanel, BoxLayout.LINE_AXIS));
+        inLibraryPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+        inLibraryPanel.add(mInLibraryCheck);
+        inLibraryPanel.add(mInLibraryLabel);
+        inLibraryPanel.add(Box.createHorizontalGlue());
+        add(inLibraryPanel, BorderLayout.PAGE_END);
+
+        // buttons
         mCancel = new JButton();
         mCancel.setAction(new CancelAction());
         mCancel.setPreferredSize(new Dimension(120, 26));
@@ -229,12 +259,19 @@ public class EntryList extends JPanel {
     public JButton getConfirmButton() {
         return mConfirm;
     }
-    // classes
 
+    // classes
     public class CheckButterKnifeListener implements ChangeListener {
         @Override
         public void stateChanged(ChangeEvent event) {
             mInitButterKnife = mInitButterKnifeCheck.isSelected();
+        }
+    }
+
+    public class CheckInLibraryListener implements ChangeListener {
+        @Override
+        public void stateChanged(ChangeEvent event) {
+            mInLibrary = mInLibraryCheck.isSelected();
         }
     }
 
@@ -271,7 +308,7 @@ public class EntryList extends JPanel {
 
             if (valid) {
                 if (mConfirmListener != null) {
-                    mConfirmListener.onConfirm(mProject, mEditor, mElements, mPrefix, mCreateHolder, mInitButterKnife);
+                    mConfirmListener.onConfirm(mProject, mEditor, mElements, mPrefix, mCreateHolder, mInitButterKnife, mInLibrary);
                 }
             }
         }

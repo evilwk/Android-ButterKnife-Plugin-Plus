@@ -42,7 +42,7 @@ public class Entry extends JPanel {
 
         mCheck = new JCheckBox();
         mCheck.setPreferredSize(new Dimension(40, 26));
-        if (!mGeneratedIDs.contains(element.getFullID())) {
+        if (!mGeneratedIDs.contains(element.getFullID(false))) {
             mCheck.setSelected(mElement.used);
         } else {
             mCheck.setSelected(false);
