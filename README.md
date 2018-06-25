@@ -16,15 +16,7 @@
 
 # 如何使用
 
-* 直接在Android Studio中搜索安装即可使用。(**可能与作者原来的插件有冲突，请卸载原来的插件方可使用**)
-
-  如何搜索安装？在AS中按照如下：Preferences->Plugins->Browse Repositories 进入插件搜索安装界面：
-
-  ![3](img/3.png)
-
-  搜索插件名称：Android ButterKnife Plugin Plus 安装即可使用。
-
-* 直接下载[Android-ButterKnife-Plugin-Plus.jar](https://raw.githubusercontent.com/OriginalLove/Android-ButterKnife-Plugin-Plus/master/Android-ButterKnife-Plugin-Plus.jar)，下载好后在AS中按照如下：Preferences->Plugins->Install plugin from disk 然后选择刚才下载的jar安装即可。
+直接下载[Android-ButterKnife-Plugin-Plus.jar](https://raw.githubusercontent.com/OriginalLove/Android-ButterKnife-Plugin-Plus/master/Android-ButterKnife-Plugin-Plus.jar)，下载好后在AS中按照如下：Preferences->Plugins->Install plugin from disk 然后选择刚才下载的jar安装即可。
 
 
 

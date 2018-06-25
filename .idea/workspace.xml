@@ -2,62 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4636b14d-1522-4dcb-8fd8-5ca229eaea99" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Android-ButterKnife-Plugin-Plus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Android-ButterKnife-Plugin-Plus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Android-ButterKnife-Plugin-Plus.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Android-ButterKnife-Plugin-Plus.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/InjectAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/InjectAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/InjectWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/InjectWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/butterknife/ButterKnifeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/butterknife/ButterKnifeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/common/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/common/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CancelAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CancelAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckButterKnifeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckButterKnifeListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckHolderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckHolderListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckPrefixListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$CheckPrefixListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$ConfirmAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList$ConfirmAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/form/EntryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/iface/IConfirmListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/iface/IConfirmListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/model/Element.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/model/Element.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarker$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarker$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider$ButterKnifeLink.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider$ButterKnifeLink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider$ClassMemberProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider$ClassMemberProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/PsiHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/avast/android/butterknifezelezny/navigation/PsiHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Android-ButterKnife-Plugin-Plus/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/Settings.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/Settings.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/AbstractButterKnife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/AbstractButterKnife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnife8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnifeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/ButterKnifeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/IButterKnife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/butterknife/IButterKnife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/common/Definitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/common/Definitions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/common/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/common/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/EntryHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/EntryHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/EntryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/form/EntryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/ICancelListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/ICancelListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/IConfirmListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/IConfirmListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/OnCheckBoxStateChangedListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/iface/OnCheckBoxStateChangedListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/model/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/model/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/NavigationMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/NavigationMarker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/NavigationMarkerProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/PsiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/navigation/PsiHelper.java" afterDir="false" />
     </list>
     <ignored path="android-butterknife-iuni.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,8 +41,8 @@
       <file leaf-file-name="InjectAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="396">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,57 +144,6 @@
             <path>
               <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
               <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="avast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,13 +203,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="butterknifezelezny" type="462c0819:PsiDirectoryNode" />
               <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Android-ButterKnife-Plugin-Plus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="butterknifezelezny" type="462c0819:PsiDirectoryNode" />
-              <item name="Settings" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="android-butterknife-iuni" type="b2602c69:ProjectViewProjectNode" />
@@ -790,19 +678,19 @@
       <workItem from="1482900240363" duration="146000" />
       <workItem from="1529894636550" duration="530000" />
       <workItem from="1529895169848" duration="6620000" />
-      <workItem from="1529909172109" duration="270000" />
+      <workItem from="1529909172109" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20875000" />
+    <option name="totallyTimeSpent" value="21000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32824427" />
       <window_info id="Palette&#9;" order="2" />
       <window_info anchor="bottom" id="Regex Tester" order="8" show_stripe_button="false" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -811,7 +699,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.026143791" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4947644" visible="true" weight="0.1433902" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4947644" visible="true" weight="0.1433902" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964131" />
       <window_info id="UI Designer" order="2" />
@@ -826,7 +714,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32897604" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32998565" />
     </layout>
   </component>
@@ -1204,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/avast/android/butterknifezelezny/InjectAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="396">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
