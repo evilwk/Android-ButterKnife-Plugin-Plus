@@ -1,5 +1,7 @@
 # Android-ButterKnife-Plugin-Plus
 
+1. 增加ButterKnife in Library选项
+
 # 介绍
 
 包含[**android-butterknife-zelezny**](https://github.com/avast/android-butterknife-zelezny) 1.6版本所有功能，并在此基础上新增如下功能：
