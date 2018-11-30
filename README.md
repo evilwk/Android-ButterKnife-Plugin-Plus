@@ -1,8 +1,10 @@
 # Android-ButterKnife-Plugin-Plus
 
+## 修改
+
 1. 增加ButterKnife in Library选项
 
-# 介绍
+## 介绍
 
 包含[**android-butterknife-zelezny**](https://github.com/avast/android-butterknife-zelezny) 1.6版本所有功能，并在此基础上新增如下功能：
 
@@ -16,11 +18,11 @@
 
    ![2](img/2.png)
 
-# 如何使用
+## 如何使用
 
 直接下载[Android-ButterKnife-Plugin-Plus.jar](https://raw.githubusercontent.com/OriginalLove/Android-ButterKnife-Plugin-Plus/master/Android-ButterKnife-Plugin-Plus.jar)，下载好后在AS中按照如下：Preferences->Plugins->Install plugin from disk 然后选择刚才下载的jar安装即可。
 
-# 鸣谢
+## 鸣谢
 
 * [**@**Tomas Kypta](https://github.com/avast/android-butterknife-zelezny) 
 * [@JakeWharton](https://github.com/JakeWharton/butterknife)
