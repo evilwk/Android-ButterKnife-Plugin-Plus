@@ -45,8 +45,6 @@ public class Element {
 
     /**
      * Create full ID for using in layout XML files
-     *
-     * @return
      */
     public String getFullID(boolean inLibrary) {
         StringBuilder fullID = new StringBuilder();
@@ -70,8 +68,6 @@ public class Element {
 
     /**
      * Generate field name if it's not done yet
-     *
-     * @return
      */
     private String getFieldName() {
         String[] words = this.id.split("_");
@@ -93,8 +89,6 @@ public class Element {
 
     /**
      * Check validity of field name
-     *
-     * @return
      */
     public boolean checkValidity() {
         Matcher matcher = sValidityPattern.matcher(fieldName);

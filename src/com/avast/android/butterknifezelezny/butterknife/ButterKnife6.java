@@ -12,7 +12,6 @@ public class ButterKnife6 extends AbstractButterKnife {
     private static final String mSimpleBindStatement = "ButterKnife.inject";
     private static final String mSimpleUnbindStatement = "ButterKnife.reset";
 
-
     @Override
     public String getVersion() {
         return "6.1.0";

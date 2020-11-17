@@ -50,10 +50,6 @@ public class Utils {
 
     /**
      * Try to find layout XML file in current source on cursor's position
-     *
-     * @param editor
-     * @param file
-     * @return
      */
     public static PsiFile getLayoutFileFromCaret(Editor editor, PsiFile file) {
         int offset = editor.getCaretModel().getOffset();
@@ -71,9 +67,6 @@ public class Utils {
 
     /**
      * Try to find layout XML file in selected element
-     *
-     * @param element
-     * @return
      */
     public static PsiFile findLayoutResource(PsiElement element) {
         log.info("Finding layout resource for element: " + element.getText());
@@ -130,11 +123,6 @@ public class Utils {
 
     /**
      * Try to find layout XML file by name
-     *
-     * @param file
-     * @param project
-     * @param fileName
-     * @return
      */
     public static PsiFile findLayoutResource(PsiFile file, Project project, String fileName) {
         String name = String.format("%s.xml", fileName);
@@ -144,9 +132,6 @@ public class Utils {
 
     /**
      * Obtain all IDs from layout
-     *
-     * @param file
-     * @return
      */
     public static ArrayList<Element> getIDsFromLayout(final PsiFile file) {
         final ArrayList<Element> elements = new ArrayList<Element>();
@@ -156,9 +141,6 @@ public class Utils {
 
     /**
      * Obtain all IDs from layout
-     *
-     * @param file
-     * @return
      */
     public static ArrayList<Element> getIDsFromLayout(final PsiFile file, final ArrayList<Element> elements) {
         file.accept(new XmlRecursiveElementVisitor() {
@@ -216,9 +198,6 @@ public class Utils {
 
     /**
      * Get layout name from XML identifier (@layout/....)
-     *
-     * @param layout
-     * @return
      */
     public static String getLayoutName(String layout) {
         if (layout == null || !layout.startsWith("@") || !layout.contains("/")) {
@@ -235,9 +214,6 @@ public class Utils {
 
     /**
      * Display simple notification - information
-     *
-     * @param project
-     * @param text
      */
     public static void showInfoNotification(Project project, String text) {
         showNotification(project, MessageType.INFO, text);
@@ -245,9 +221,6 @@ public class Utils {
 
     /**
      * Display simple notification - error
-     *
-     * @param project
-     * @param text
      */
     public static void showErrorNotification(Project project, String text) {
         showNotification(project, MessageType.ERROR, text);
@@ -255,10 +228,6 @@ public class Utils {
 
     /**
      * Display simple notification of given type
-     *
-     * @param project
-     * @param type
-     * @param text
      */
     public static void showNotification(Project project, MessageType type, String text) {
         StatusBar statusBar = WindowManager.getInstance().getStatusBar(project);
@@ -272,8 +241,6 @@ public class Utils {
 
     /**
      * Load field name prefix from code style
-     *
-     * @return
      */
     public static String getPrefix() {
         if (PropertiesComponent.getInstance().isValueSet(Settings.PREFIX)) {
@@ -352,9 +319,6 @@ public class Utils {
 
     /**
      * Easier way to check if string is empty
-     *
-     * @param text
-     * @return
      */
     public static boolean isEmptyString(String text) {
         return (text == null || text.trim().length() == 0);

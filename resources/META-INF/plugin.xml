@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>life.iuni.android.plugin.butterknife</id>
     <name>Android ButterKnife Plugin Plus</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <vendor email="q568660429@gmail.com" url="https://github.com/OriginalLove/Android-ButterKnife-Plugin-Plus">
         wincomit
     </vendor>
@@ -23,6 +23,8 @@
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="141.0"/>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.platform</depends>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->

@@ -17,6 +17,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.util.PsiUtilBase;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class InjectAction extends BaseGenerateAction implements IConfirmListener
     }
 
     @Override
-    public boolean isValidForFile(Project project, Editor editor, PsiFile file) {
+    public boolean isValidForFile(@NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
         IButterKnife butterKnife = ButterKnifeFactory.findButterKnifeForPsiElement(project, file);
 
         return (butterKnife != null && super.isValidForFile(project, editor, file) && Utils.getLayoutFileFromCaret(editor, file) != null);
@@ -60,7 +61,7 @@ public class InjectAction extends BaseGenerateAction implements IConfirmListener
     }
 
     @Override
-    public void actionPerformedImpl(Project project, Editor editor) {
+    public void actionPerformedImpl(@NotNull Project project, Editor editor) {
         PsiFile file = PsiUtilBase.getPsiFileInEditor(editor, project);
         PsiFile layout = Utils.getLayoutFileFromCaret(editor, file);
 

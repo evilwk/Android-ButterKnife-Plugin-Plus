@@ -13,9 +13,7 @@ import com.intellij.util.Processor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.avast.android.butterknifezelezny.navigation.PsiHelper.getAnnotation;
@@ -26,14 +24,14 @@ public class NavigationMarkerProvider implements LineMarkerProvider {
     private static final Predicate<PsiElement> IS_FIELD_IDENTIFIER = new Predicate<PsiElement>() {
         @Override
         public boolean apply(@Nullable PsiElement element) {
-            return element != null && element instanceof PsiIdentifier && element.getParent() instanceof PsiField;
+            return element instanceof PsiIdentifier && element.getParent() instanceof PsiField;
         }
     };
 
     private static final Predicate<PsiElement> IS_METHOD_IDENTIFIER = new Predicate<PsiElement>() {
         @Override
         public boolean apply(@Nullable PsiElement element) {
-            return element != null && element instanceof PsiIdentifier && element.getParent() instanceof PsiMethod;
+            return element instanceof PsiIdentifier && element.getParent() instanceof PsiMethod;
         }
     };
 
@@ -60,11 +58,6 @@ public class NavigationMarkerProvider implements LineMarkerProvider {
         }
 
         return null;
-    }
-
-    @Override
-    public void collectSlowLineMarkers(@NotNull List<PsiElement> psiElements, @NotNull Collection<LineMarkerInfo> lineMarkerInfos) {
-        // empty
     }
 
     @Nullable
@@ -141,7 +134,7 @@ public class NavigationMarkerProvider implements LineMarkerProvider {
         }
     }
 
-    private class ClassMemberProcessor implements Processor<PsiMember> {
+    private static class ClassMemberProcessor implements Processor<PsiMember> {
         private final String resourceId;
         private final ButterKnifeLink link;
         private PsiMember resultMember;

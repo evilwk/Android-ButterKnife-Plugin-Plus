@@ -16,7 +16,6 @@ public abstract class AbstractButterKnife implements IButterKnife {
     private final String mOnClickCanonicalName = getPackageName() + ".OnClick";
     private final String mUnbinderClassCanonicalName = getPackageName() + "." + getUnbinderClassSimpleName();
 
-
     @Override
     public Pattern getFieldAnnotationPattern() {
         return mFieldAnnotationPattern;
